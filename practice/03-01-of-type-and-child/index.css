@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+.container p:first-child {
+    background-color: red;
+}
+
+/* 첫 번째 자식이 p태그가 아니기 때문에 css가 적용이 되지 않음 */
+
+.container p:first-of-type {
+    background-color: blue;
+}
+
+/* p태그 중에 첫번째 자식에 css 적용 */
+
+.container p:last-of-type {
+    background-color: yellow;
+}
+
+.container p:nth-of-type(2) {
+    background-color: green;
+}
+
+.container span:first-of-type {
+    font-weight: 600;
+    text-decoration: underline;
+}
