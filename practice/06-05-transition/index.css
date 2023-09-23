@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+.button {
+    margin: 20px;
+    width: 190px;
+    background-color: #123ecf;
+    border-radius: 5px;
+    padding: 10px;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tp1 {
+    transition: width 0.3s ease-in-out 0s;
+}
+
+.tp2 {
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.tp3 {
+    transition: width 0.2s ease-in-out 0.5s, background-color 0.2s ease-in-out;
+}
+
+.tp1:hover {
+    width: 250px;
+}
+
+.tp2:hover {
+    background-color: #002398;
+    width: 250px;
+}
+
+.tp3:hover {
+    background-color: #002398;
+    width: 250px;
+}
