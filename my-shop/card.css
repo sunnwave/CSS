@@ -12,6 +12,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .item {
@@ -20,6 +21,7 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .item:after {
@@ -111,8 +113,4 @@ body {
 
 .item .textBox__price {
     transition: all 0.2s ease-in-out 0.2s;
-}
-
-.textBox__name:hover {
-    /* transform: translateY(-10px); */
 }
