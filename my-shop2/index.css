@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.outerbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 280px 1fr; */
+}
+
+.mainBanner {
+    width: 100%;
+    height: 280px;
+    background-image: url(./img/banner.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.mainBanner .text {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+    animation: titleText 1s ease-in-out;
+}
+
+@keyframes titleText {
+    0% {
+        transform: translateY(70px);
+        opacity: 0;
+    }
+
+    92% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.menuBar {
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forBuyer {
+    width: 100%;
+    height: 207px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: orange;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.BuyerMenu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.BuyerMenu:hover {
+    background-color: rgb(255, 141, 34);
+    border-radius: 20px;
+}
+
+.BuyerMenu:hover a {
+    transform: translateX(15px);
+}
+
+.forSeller {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+}
+
+.forSeller:hover {
+    border: 1px solid black;
+    background-color: white;
+}
+
+.forSeller:hover #register {
+    color: black;
+}
+
+#arrow {
+    display: inline-block;
+    padding-left: 10px;
+    justify-content: center;
+}
+
+.forSeller:hover #arrow {
+    transform: translateX(40px);
+}
+
+a,
+.forSeller,
+#arrow {
+    transition: all 0.3s ease-in-out;
+}
+
+.itemWrap {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; */
+    width: calc(100% - 170px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 7px;
+    margin-left: 10px;
+}
+
+.item {
+    /* width: calc(25% - 7px); */
+    aspect-ratio: 6/5;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.item:after {
+    content: "";
+    display: block;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+}
+
+.imgBox {
+    width: 100%;
+    height: 100%;
+}
+
+.imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.textBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+    z-index: 3;
+
+}
+
+.textBox p {
+    color: white;
+    margin: 5px 0;
+}
+
+.textBox__name {
+    font-size: 22px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.textBox__price {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.item:hover:after {
+    opacity: 1;
+}
+
+.item:hover .imgBox img {
+    transform: scale(1.1);
+    filter: blur(3px);
+}
+
+.item:hover .textBox__name {
+    opacity: 1;
+    transform: translateY(0);
+    /* transition: transform 0.2s ease-in-out 0.3s */
+}
+
+.item:hover .textBox__price {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.item::after,
+.item .imgBox img {
+    transition: all 0.2s ease-in-out;
+}
+
+.item .textBox__name {
+    transition: all 0.2s ease-in-out 0.1s;
+}
+
+.item .textBox__price {
+    transition: all 0.2s ease-in-out 0.2s;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
